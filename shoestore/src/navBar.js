@@ -1,6 +1,6 @@
 import React from 'react';
 import './navBar.css';
-
+import { NavLink } from 'react-router-dom';
 
 class Navbar extends React.Component {
 
@@ -11,18 +11,18 @@ class Navbar extends React.Component {
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item">
                             <div className="nav-item-container">
-                                <a className="nav-link" href="./App">Home</a>
+                                <NavLink to="/">Home</NavLink>
                             </div>
                         </li>
                         <li className="nav-item">
                             <div className="nav-item-container">
-                                <a className="nav-link" href="./mens">Men's Shoes</a>
+                                <NavLink to="/mensShoes">Men's Shoes</NavLink>
                             </div>
                         </li>
 
                         <li className="nav-item">
                             <div className="nav-item-container">
-                                <a className="nav-link" href="./womens">Women's Shoes</a>
+                                <NavLink to="/womensShoes">Women's Shoes</NavLink>
                             </div>
                         </li>
                     </ul>
