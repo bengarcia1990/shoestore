@@ -9,6 +9,7 @@
 }
 
 .nav-item-container{
+    background-color: gray;
     border: solid;
     border-radius: 16px;
     opacity: 0.5;

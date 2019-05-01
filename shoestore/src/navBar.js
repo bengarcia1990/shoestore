@@ -11,18 +11,18 @@ class Navbar extends React.Component {
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item">
                             <div className="nav-item-container">
-                                <NavLink to="/">Home</NavLink>
+                                <NavLink to="/" className="nav-link">Home</NavLink>
                             </div>
                         </li>
                         <li className="nav-item">
                             <div className="nav-item-container">
-                                <NavLink to="/mensShoes">Men's Shoes</NavLink>
+                                <NavLink to="/mensShoes" className="nav-link">Men's Shoes</NavLink>
                             </div>
                         </li>
 
                         <li className="nav-item">
                             <div className="nav-item-container">
-                                <NavLink to="/womensShoes">Women's Shoes</NavLink>
+                                <NavLink to="/womensShoes" className="nav-link">Women's Shoes</NavLink>
                             </div>
                         </li>
                     </ul>
