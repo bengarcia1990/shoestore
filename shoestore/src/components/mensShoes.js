@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Review from './review';
 
 class MensShoes extends React.Component {
 
@@ -10,7 +10,7 @@ class MensShoes extends React.Component {
                 Men's Shoes, b
 
 
-                {/* <WriteReview /> */}
+                <Review />
             </div>
 
 

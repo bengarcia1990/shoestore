@@ -10,11 +10,11 @@ class Login extends React.Component {
     handleInputChange = (e) =>
         this.setState({ [e.target.name]: e.target.value })
 
-    // submitLogin = (e) => {
-    //     e.preventDefault();
-    //     login(this.state)
-    //         .then(token => window.location = '/').catch(err => console.log(err));
-    // }
+    submitLogin = (e) => {
+        e.preventDefault();
+        login(this.state)
+            .then(token => window.location = '/').catch(err => console.log(err));
+    }
 
     render() {
         return (
