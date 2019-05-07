@@ -7,8 +7,8 @@ import WomensShoes from "./womensShoes";
 import nike from "../nike.jpg";
 import Footer from './footer';
 
-
 class App extends React.Component {
+
   render() {
     return (
       <div className="App" >
