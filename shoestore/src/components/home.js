@@ -1,5 +1,5 @@
 import React from 'react';
-//import Navbar from './navBar.js'
+import '../stylesheets/home.css'
 
 class Home extends React.Component {
     constructor() {
@@ -11,7 +11,6 @@ class Home extends React.Component {
 
     render() {
         return (
-            
            <div className="container">
                 <div className="row">
                     <div className="col-md-4">
@@ -19,7 +18,7 @@ class Home extends React.Component {
                             <div className="card-header">
                                 Card Header
                             </div>
-                            <div className="card-body bg-secondary">
+                            <div className="card-body" background-image="C:\Users\Paulo\Desktop\Project\AllFirebase\Img\1350409">
                             <h5 className="card-title">Card title</h5>
                             <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                               <button className="btn btn-primary">Click me</button>

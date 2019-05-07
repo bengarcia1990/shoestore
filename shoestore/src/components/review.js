@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/review.css';
+import '../stylesheets/review.css';
 import firebase from "firebase";
 
 const config = {
@@ -19,16 +19,17 @@ const Generic_Review = "Review this product"
 class Review extends React.Component {
 
 
-  componentWillMount() {
+  constructor() {
+     super();
     this.state = {
-           comment: Generic_Review,
+           comment: Generic_Review ,
         submitMode: false
-    }
+    };
 }
 
 
   componentDidMount() {
-    const commentRef = database.ref("comment/");
+    const commentRef = database.ref("reviews/");
 
     commentRef.on("value", snapshot => {
       this.setState({
@@ -39,9 +40,12 @@ class Review extends React.Component {
 
   writeData = e => {
 
-    const commentValue = e.target.elements.inputText.value;
+     const commentValue =   e.target.value;
+    //   const commentValue = e.this.ref.commentContent.value;
+    //const commentValue = $("inputText").value;
 
-    database.ref("comment/").push(commentValue, function (error) {
+
+    database.ref("reviews/").set(commentValue, function (error) {
       error ? alert("error") : console.log("it worked")
     }
     )
@@ -60,22 +64,32 @@ class Review extends React.Component {
          submitMode: false
         });
     } 
-
+/*
+  handleChange(e) {
+    this.setState({
+      value: e.target.value
+    });
+  }  
+*/
     render() {
 
         let commentElement, buttonArea;
         if (this.state.submitMode) {
-            commentElement = (<textarea ref="commentContent" type="comment" className='col-sm-6' name="inputText" placeholder={Generic_Review}></textarea>)
+             
+            commentElement = (
+
+                <input ref="commentContent" type="text" className='col-sm-6' name="inputText" value={this.state.value} 
+                placeholder={Generic_Review} /> ) 
 
             buttonArea = (
                 <div>
-                    <button className='btn btn-info' onClick={this.handleSubmit.bind(this)} onSubmit={this.writeData.bind(this)}>
-                        Submit
-                  </button>
+                <button className='btn btn-info' onClick={(this.handleSubmit.bind(this)) && (this.writeData) }>
+                    Submit
+                </button>
                 </div>
-            )
-
+              )
         }
+
         else {
             commentElement = <h6>{Generic_Review}</h6>
             buttonArea = (
@@ -85,9 +99,9 @@ class Review extends React.Component {
                         onClick={this.handleComment.bind(this)}
                     >
                         Write a review
-                  </button>
+                    </button>
 
-               </div>     
+                </div>     
             );
         }
 
@@ -96,7 +110,7 @@ class Review extends React.Component {
             <div className='col-sm-8'>
                 <div className='card card-view'>
                     <div className='card-body'>
-                        {commentElement}
+                        {commentElement}<br/>
                         {buttonArea}
                     </div>
                 </div>
@@ -117,4 +131,3 @@ class Review extends React.Component {
     };
 
 export default Review;
-
