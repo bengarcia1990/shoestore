@@ -1,7 +1,6 @@
 import React from 'react';
 import '../stylesheets/review.css';
 import * as firebase from "firebase";
-import Review from './review'
 
 var config = {
   apiKey: "AIzaSyCChWpAScV7I2LK1rmGdDQDSu-c-yso6Jw",
@@ -17,7 +16,7 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
-const Generic_Review = "Review this product"
+const Generic_Review = '';
 
 class Reviewhandle extends React.Component {
 
@@ -29,15 +28,16 @@ class Reviewhandle extends React.Component {
     };
   }
 
-
   componentDidMount() {
     const commentRef = database.ref("review/");
+
     commentRef.on("value", snapshot => {
       console.log(snapshot.val())
       this.setState({
         review: snapshot.val()
       })
     })
+
   }
 
   writeData = e => {
@@ -100,12 +100,9 @@ class Reviewhandle extends React.Component {
           <div className='card-body'>
             {commentElement}
             {buttonArea}
-
           </div>
         </div>
-        {this.state.reviews.map(review => {
-          return <Review />
-        })}
+
       </div>
 
     )
