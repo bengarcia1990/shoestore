@@ -12,7 +12,7 @@ class Login extends React.Component {
 
     submitLogin = (e) => {
         e.preventDefault();
-        login(this.state)
+        (this.state)
             .then(token => window.location = '/').catch(err => console.log(err));
     }
 
