@@ -18,12 +18,12 @@ const Generic_Review = "Review this product"
 
 class Review extends React.Component {
 
-
-  componentWillMount() {
-    this.state = {
+  constructor() {
+    super();
+    this.setState = {
       comment: Generic_Review,
       submitMode: false
-    }
+    };
   }
 
 
@@ -38,7 +38,7 @@ class Review extends React.Component {
   }
 
   writeData = e => {
-
+    e.preventDefault();
     const commentValue = e.target.elements.inputText.value;
 
     database.ref("comment/").push(commentValue, function (error) {
@@ -71,7 +71,7 @@ class Review extends React.Component {
         <div>
           <button className='btn btn-info' onClick={this.handleSubmit.bind(this)} onSubmit={this.writeData.bind(this)}>
             Submit
-                  </button>
+          </button>
         </div>
       )
 
