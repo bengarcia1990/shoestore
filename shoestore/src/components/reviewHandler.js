@@ -2,6 +2,8 @@ import React from 'react';
 import '../stylesheets/review.css';
 import  firebase from "firebase";
 import Review from './review'
+import * as firebase from "firebase";
+import Review from './review';
 
 
 const config = {
@@ -32,8 +34,7 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
-
-const Generic_Review = "Review this product"
+const Generic_Review = '';
 
 class Reviewhandle extends React.Component {
 
@@ -45,9 +46,9 @@ class Reviewhandle extends React.Component {
     };
   }
 
-
   componentDidMount() {
     const commentRef = database.ref("review/");
+
     commentRef.on("value", snapshot => {
       console.log(snapshot.val())
       this.setState({
@@ -55,14 +56,15 @@ class Reviewhandle extends React.Component {
         submitMode: false
       })
     })
+
   }
 
   writeData = e => {
     e.preventDefault();
-    const commentValue = e.target.inputText.value;
+    const reviewValue = e.target.inputText.value;
 
-    database.ref("review/").push(commentValue, function (error) {
-      error ? alert("error") : console.log("it worked")
+    database.ref("review/").push(reviewValue, function (error) {
+      error ? alert("error") : console.log("it worked", reviewValue)
     }
     )
   }
@@ -116,15 +118,13 @@ class Reviewhandle extends React.Component {
             {buttonArea}
           </div>
       //  </div>
-   //   </div>
+
+    //  </div>
 
     )
   }
 }
 
-// reviews.defaultProps = {
-//   review: 'Comment',
-// };
 
 export default Reviewhandle;
 
