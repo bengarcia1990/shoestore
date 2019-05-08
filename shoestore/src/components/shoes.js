@@ -1,8 +1,9 @@
 import React from 'react';
+import ReviewHandle from './reviewHandler'
+import '../stylesheets/shoes.css';
 
-//import Navbar from './navBar.js'
 
-class shoes extends React.Component {
+class Shoes extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -10,54 +11,54 @@ class shoes extends React.Component {
         }
     }
 
+
     render() {
         return (
 
             <div className="container">
                 <div className="row">
-                    <div className="col-md-4">
+                    <div className="col-md-5">
                         <div className="card border-danger" >
-                            <div className="card-header">
-                                Card Header
-                            </div>
-                            <div className="card-body bg-secondary">
-                                <h5 className="card-title">Card title</h5>
-                                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <button className="btn btn-primary">Click me</button>
+                            <div id="first" className="card-body ">
+
                             </div>
                             <div className="card-footer">
-                                Card Footer
+                                <ReviewHandle />
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-5">
                         <div className="card border-danger" >
-                            <div className="card-header">
-                                Card Header
-                                         </div>
-                            <div className="card-body bg-secondary">
+                            <div id="second" className="card-body bg-secondary">
                                 <h5 className="card-title">Card title</h5>
                                 <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                < button className="btn btn-primary">Click me</button>
                             </div>
                             <div className="card-footer">
-                                Card Footer
-                                         </div>
+                                <ReviewHandle />
+                            </div>
                         </div>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-5">
                         <div className="card border-danger"  >
-                            <div className="card-header">
-                                Card Header
-                                        </div>
-                            <div className="card-body bg-secondary">
+                            <div id="third" className="card-body bg-secondary">
                                 <h5 className="card-title">Card title</h5>
                                 <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 <button class="btn btn-primary">Click me</button>
                             </div>
                             <div className="card-footer">
-                                Card Footer
-                                         </div>
+                                <ReviewHandle />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-md-5">
+                        <div className="card border-danger" >
+                            <div id="first" className="card-body bg-secondary">
+                                <h5 className="card-title">Card title</h5>
+                                < button className="btn btn-primary">Click me</button>
+                            </div>
+                            <div className="card-footer">
+                                <ReviewHandle />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -67,4 +68,4 @@ class shoes extends React.Component {
 }
 
 
-export default shoes;
+export default Shoes;

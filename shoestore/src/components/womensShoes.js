@@ -1,5 +1,6 @@
 import React from 'react';
 import Reviewhandle from './reviewHandler';
+import Shoes from './shoes'
 import sperry from '../sperry.jpeg';
 
 
@@ -8,8 +9,9 @@ class WomensShoes extends React.Component {
     render() {
         return (
             <div className="pageContainer">
+                <Shoes />
 
-                Women's Shoes, b
+               
 
                 <div>
                 <img src={sperry} alt="A shoe"/> 

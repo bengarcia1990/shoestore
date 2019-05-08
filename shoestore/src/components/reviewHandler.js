@@ -1,8 +1,11 @@
 import React from 'react';
 import '../stylesheets/review.css';
+import firebase from "firebase";
+import Review from './review'
 import * as firebase from "firebase";
 
-var config = {
+
+const config = {
   apiKey: "AIzaSyCChWpAScV7I2LK1rmGdDQDSu-c-yso6Jw",
   authDomain: "another-example-964d2.firebaseapp.com",
   databaseURL: "https://another-example-964d2.firebaseio.com",
@@ -13,6 +16,20 @@ var config = {
 };
 
 firebase.initializeApp(config);
+
+/*
+
+const config = {
+  apiKey: "AIzaSyDdkwKYHkxhiBNEABcTOn4IzBBtnuMrLeU",
+  authDomain: "shoeshopproject.firebaseapp.com",
+  databaseURL: "https://shoeshopproject.firebaseio.com",
+  projectId: "shoeshopproject",
+  storageBucket: "shoeshopproject.appspot.com",
+  messagingSenderId: "299630602786"
+};
+firebase.initializeApp(config);
+
+*/
 
 const database = firebase.database();
 
@@ -94,10 +111,17 @@ class Reviewhandle extends React.Component {
 
   render() {
 
+<<<<<<< HEAD
     let commentElement, buttonArea, submittedReviews;
     if (this.state.submitMode || this.state.showMode) {
+=======
+    let commentElement, buttonArea;
+    if (this.state.submitMode) {
+
+>>>>>>> e9f09ccd158135f706eae63d56c6fc362e065c02
       commentElement = (
-        <form onSubmit={this.writeData.bind(this)}> <textarea ref="commentContent" type="text" className='col-sm-6' name="inputText" placeholder={Generic_Review} />
+        <form onSubmit={this.writeData.bind(this)}>
+          <textarea ref="commentContent" type="text" className='col-sm-6' name="inputText" placeholder={Generic_Review} />
           <input className='btn btn-info' type="submit" name="submitButton" />
         </ form>)
 
@@ -128,16 +152,17 @@ class Reviewhandle extends React.Component {
 
 
     return (
-      <div className='col-sm-8'>
-        <div className='card card-view'>
-          <div className='card-body'>
-            {commentElement}
-            {buttonArea}
-            {submittedReviews}
-          </div>
-        </div>
 
+      // <div className='col-sm-8'>
+      //   <div className='card card-view'>
+      <div className='card-body'>
+        {commentElement}
+        {buttonArea}
+        {submittedReviews}
       </div>
+      //  </div>
+
+      //  </div>
 
     )
   }

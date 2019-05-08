@@ -7,6 +7,7 @@ import WomensShoes from "./womensShoes";
 import Footer from './footer';
 import Body from './body';
 
+
 class App extends React.Component {
 
   render() {
@@ -22,7 +23,8 @@ class App extends React.Component {
         <Body />
         <Footer />
       </div>
-    );
+      
+    )
   };
 };
 
