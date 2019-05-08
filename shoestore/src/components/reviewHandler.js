@@ -1,6 +1,7 @@
 import React from 'react';
 import '../stylesheets/review.css';
 import * as firebase from "firebase";
+import Review from './review';
 
 var config = {
   apiKey: "AIzaSyCChWpAScV7I2LK1rmGdDQDSu-c-yso6Jw",
@@ -42,10 +43,10 @@ class Reviewhandle extends React.Component {
 
   writeData = e => {
     e.preventDefault();
-    const commentValue = e.target.value;
+    const reviewValue = e.target.inputText.value;
 
-    database.ref("review/").push(commentValue, function (error) {
-      error ? alert("error") : console.log("it worked")
+    database.ref("review/").push(reviewValue, function (error) {
+      error ? alert("error") : console.log("it worked", reviewValue)
     }
     )
   }
@@ -69,19 +70,13 @@ class Reviewhandle extends React.Component {
 
     let commentElement, buttonArea;
     if (this.state.submitMode) {
-      commentElement = (<textarea ref="commentContent" type="comment" className='col-sm-6' name="inputText" placeholder={Generic_Review}></textarea>)
-
-      buttonArea = (
-        <div>
-          <button className='btn btn-info' onClick={this.writeData.bind(this)}>
-            Submit
-          </button>
-        </div>
-      )
+      commentElement = (
+        <form onSubmit={this.writeData.bind(this)}> <textarea ref="commentContent" type="text" className='col-sm-6' name="inputText" placeholder={Generic_Review} />
+          <input className='btn btn-info' type="submit" name="submitButton" />
+        </ form>)
     }
 
     else {
-      commentElement = <h6>{Generic_Review}</h6>
       buttonArea = (
         <div>
           <button
@@ -109,9 +104,6 @@ class Reviewhandle extends React.Component {
   }
 }
 
-// reviews.defaultProps = {
-//   review: 'Comment',
-// };
 
 export default Reviewhandle;
 
