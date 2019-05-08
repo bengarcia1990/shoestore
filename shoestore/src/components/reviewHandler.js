@@ -1,9 +1,10 @@
 import React from 'react';
 import '../stylesheets/review.css';
-import * as firebase from "firebase";
+import  firebase from "firebase";
 import Review from './review'
 
-var config = {
+
+const config = {
   apiKey: "AIzaSyCChWpAScV7I2LK1rmGdDQDSu-c-yso6Jw",
   authDomain: "another-example-964d2.firebaseapp.com",
   databaseURL: "https://another-example-964d2.firebaseio.com",
@@ -15,7 +16,22 @@ var config = {
 
 firebase.initializeApp(config);
 
+/*
+
+const config = {
+  apiKey: "AIzaSyDdkwKYHkxhiBNEABcTOn4IzBBtnuMrLeU",
+  authDomain: "shoeshopproject.firebaseapp.com",
+  databaseURL: "https://shoeshopproject.firebaseio.com",
+  projectId: "shoeshopproject",
+  storageBucket: "shoeshopproject.appspot.com",
+  messagingSenderId: "299630602786"
+};
+firebase.initializeApp(config);
+
+*/
+
 const database = firebase.database();
+
 
 const Generic_Review = "Review this product"
 
@@ -35,14 +51,15 @@ class Reviewhandle extends React.Component {
     commentRef.on("value", snapshot => {
       console.log(snapshot.val())
       this.setState({
-        review: snapshot.val()
+        review: snapshot.val(),
+        submitMode: false
       })
     })
   }
 
   writeData = e => {
     e.preventDefault();
-    const commentValue = e.target.value;
+    const commentValue = e.target.inputText.value;
 
     database.ref("review/").push(commentValue, function (error) {
       error ? alert("error") : console.log("it worked")
@@ -69,19 +86,15 @@ class Reviewhandle extends React.Component {
 
     let commentElement, buttonArea;
     if (this.state.submitMode) {
-      commentElement = (<textarea ref="commentContent" type="comment" className='col-sm-6' name="inputText" placeholder={Generic_Review}></textarea>)
-
-      buttonArea = (
-        <div>
-          <button className='btn btn-info' onClick={this.writeData.bind(this)}>
-            Submit
-          </button>
-        </div>
-      )
+      
+      commentElement = (
+        <form onSubmit={this.writeData.bind(this)}> 
+        <textarea ref="commentContent" type="text" className='col-sm-6' name="inputText" placeholder={Generic_Review} />
+        <input className='btn btn-info' type="submit" name="submitButton" />
+        </ form>)
     }
 
     else {
-      commentElement = <h6>{Generic_Review}</h6>
       buttonArea = (
         <div>
           <button
@@ -95,18 +108,15 @@ class Reviewhandle extends React.Component {
 
 
     return (
-      <div className='col-sm-8'>
-        <div className='card card-view'>
+      
+     // <div className='col-sm-8'>
+     //   <div className='card card-view'>
           <div className='card-body'>
             {commentElement}
             {buttonArea}
-
           </div>
-        </div>
-        {this.state.reviews.map(review => {
-          return <Review />
-        })}
-      </div>
+      //  </div>
+   //   </div>
 
     )
   }

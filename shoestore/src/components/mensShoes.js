@@ -1,16 +1,14 @@
 import React from 'react';
 import Reviewhandle from './reviewHandler';
+import Shoes from './shoes'
 
 class MensShoes extends React.Component {
 
     render() {
         return (
             <div className="pageContainer">
-
-                Men's Shoes, b
-
-
-                <Reviewhandle />
+             <Shoes />
+             <Reviewhandle />
             </div>
 
 
