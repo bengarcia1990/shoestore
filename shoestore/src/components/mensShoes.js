@@ -9,31 +9,30 @@ class MensShoes extends React.Component {
     render() {
         return (
             <div className="pageContainer">
-             <Shoes />
-             <Reviewhandle />
+                <Shoes />
 
                 Men's Shoes,
-                
+
                 <div>
-                <img src={sperry} alt="A shoe"/> 
-                $60.99 <button>Buy</button>
+                    <img src={sperry} alt="A shoe" />
+                    $60.99 <button>Buy</button>
                 </div>
 
                 <div>
-                <img src={sperry} alt="A shoe"/> 
-                $60.99 <button>Buy</button>
+                    <img src={sperry} alt="A shoe" />
+                    $60.99 <button>Buy</button>
                 </div>
 
                 <div>
-                <img src={sperry} alt="A shoe"/> 
-                $60.99 <button>Buy</button>
+                    <img src={sperry} alt="A shoe" />
+                    $60.99 <button>Buy</button>
                 </div>
 
-            <Reviewhandle />
-            <Footer/>
+                <Reviewhandle />
+                <Footer />
             </div>
-            
-            
+
+
 
         );
     }
