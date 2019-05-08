@@ -1,5 +1,5 @@
 .navbar{
-    background-color: white;
+    background-color: black;
     height: 60px;
 }
 
@@ -9,10 +9,16 @@
 }
 
 .nav-item-container{
-    background-color: gray;
+    background-color: white;
     border: solid;
     border-radius: 16px;
     opacity: 0.5;
+    margin: 10px;
+}
+
+.search-container{
+    display: inline-block;
+    margin: 10px;
 }
 
 a:hover{
@@ -36,4 +42,24 @@ a:hover{
     color: white;
 }
 
+.log-in-container{
+    padding-left: 15px;
+    padding-right: 15px;
+    align-content: center;
+    font-size: 15px;
+    
+}
+.log-in-header{
+    align-content: left;
+}
+.log-in-un{
+    font-size: 10px;
+    display: inline-block;
+    
+}
+
+.log-in-pw{
+    font-size: 10px;
+    display: inline-block;
+}
 

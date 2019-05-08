@@ -1,4 +1,5 @@
 import React from 'react';
+import Reviewhandle from './reviewHandler';
 
 
 class WomensShoes extends React.Component {
@@ -8,8 +9,7 @@ class WomensShoes extends React.Component {
             <div className="pageContainer">
 
                 Women's Shoes, b
-
-                {/* <WriteReview /> */}
+                <Reviewhandle />
             </div>
 
 

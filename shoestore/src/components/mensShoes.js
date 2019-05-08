@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Reviewhandle from './reviewHandler';
 
 class MensShoes extends React.Component {
 
@@ -10,7 +10,7 @@ class MensShoes extends React.Component {
                 Men's Shoes, b
 
 
-                {/* <WriteReview /> */}
+                <Reviewhandle />
             </div>
 
 

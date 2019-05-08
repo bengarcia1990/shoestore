@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import '../stylesheets/App.css';
-//import Home from './home'
 import Navbar from './navBar';
 import MensShoes from "./mensShoes"
 import WomensShoes from "./womensShoes"
 
 class App extends React.Component {
+
   render() {
     return (
       <div className="App" >

@@ -1,7 +1,7 @@
 import React from 'react';
 import '../stylesheets/navBar.css';
-
 import { NavLink } from 'react-router-dom';
+import Login from "./logIn"
 
 class Navbar extends React.Component {
 
@@ -26,10 +26,16 @@ class Navbar extends React.Component {
                                 <NavLink to="/womensShoes" className="nav-link">Women's Shoes</NavLink>
                             </div>
                         </li>
+
                     </ul>
-                    <form className="form-inline">
-                        <input className="form-control" type="search" placeholder="Search" aria-label="Search" />
+                    <form className="search-container">
+                        <input className="search-container" type="search" placeholder="Search" aria-label="Search" />
                         <button className="searchBtn" type="submit">Search</button>
+                    </form>
+                    <form>
+                        <div>
+                            <Login />
+                        </div>
                     </form>
                 </div>
             </nav >
