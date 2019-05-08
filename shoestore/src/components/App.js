@@ -4,8 +4,8 @@ import '../stylesheets/App.css';
 import Navbar from './navBar';
 import MensShoes from "./mensShoes";
 import WomensShoes from "./womensShoes";
-import nike from "../nike.jpg";
 import Footer from './footer';
+import Body from './body';
 
 class App extends React.Component {
 
@@ -19,7 +19,7 @@ class App extends React.Component {
             <Route path="/womensshoes" component={WomensShoes} />
           </Switch>
         </BrowserRouter>
-        <img src={nike} alt="A shoe"/>
+        <Body />
         <Footer />
       </div>
     );
