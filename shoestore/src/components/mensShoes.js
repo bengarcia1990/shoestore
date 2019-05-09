@@ -1,14 +1,18 @@
 import React from 'react';
 import Reviewhandle from './reviewHandler';
-import Shoes from './shoes'
-import Footer from './footer';
-import sperry from '../sperry.jpeg';
+import Mshoes from './mshoecards'
+
 
 class MensShoes extends React.Component {
 
     render() {
         return (
             <div className="pageContainer">
+<<<<<<< HEAD
+              <Mshoes />
+              <Reviewhandle />
+            </div>
+=======
                 <Shoes />
 
                 Men's Shoes,
@@ -34,6 +38,7 @@ class MensShoes extends React.Component {
 
 
 
+>>>>>>> 4114e4e5ee25e2aa8a1b3b09ca32231ea335c167
         );
     }
 

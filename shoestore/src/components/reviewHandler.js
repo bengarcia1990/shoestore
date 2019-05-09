@@ -1,6 +1,10 @@
 import React from 'react';
+<<<<<<< HEAD
+import  firebase from "firebase";
+=======
 import '../stylesheets/review.css';
 import firebase from "firebase";
+>>>>>>> 4114e4e5ee25e2aa8a1b3b09ca32231ea335c167
 
 
 const config = {
@@ -19,10 +23,12 @@ const database = firebase.database();
 
 const Generic_Review = '';
 
+
+
 class Reviewhandle extends React.Component {
 
-  constructor() {
-    super();
+    constructor() {
+       super();
     this.state = {
       reviews: [],
       submitMode: false
@@ -32,7 +38,7 @@ class Reviewhandle extends React.Component {
   componentDidMount() {
     const commentRef = database.ref("review/");
 
-    commentRef.on("value", snapshot => {
+      commentRef.on("value", snapshot => {
       console.log(snapshot.val())
       this.setState({
         review: snapshot.val(),
@@ -92,6 +98,17 @@ class Reviewhandle extends React.Component {
 
 
     return (
+<<<<<<< HEAD
+      
+     // <div className='col-sm-8'>
+     //   <div className='card card-view'>
+          <div>
+            {commentElement}
+            {buttonArea}
+          </div>
+      //  </div>
+=======
+>>>>>>> 4114e4e5ee25e2aa8a1b3b09ca32231ea335c167
 
       // <div className='col-sm-8'>
       //   <div className='card card-view'>
