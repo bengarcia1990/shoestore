@@ -104,7 +104,7 @@ class Reviewhandle extends React.Component {
         </ form>)
 
       submittedReviews = (
-        <form onSubmit={this.writeFireData.bind(this)}> <textarea type="text" className='col-sm-6' name="oldReview" />
+        <form onClick={this.writeFireData.bind(this)}> <textarea type="text" className='col-sm-6' name="oldReview" />
           <input className='btn btn-info' type="submit" name="reviewButtom" />
         </form>
       )
