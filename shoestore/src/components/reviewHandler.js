@@ -37,7 +37,6 @@ class Reviewhandle extends React.Component {
       this.setState({
         review: snapshot.val(),
         submitMode: false,
-        showMode: false
       })
     })
 
@@ -53,34 +52,11 @@ class Reviewhandle extends React.Component {
     )
   }
 
-  writeFireData = e => {
-    e.preventDefault();
-    const calledReview = database.ref("review/");
-    calledReview.on("value", function (snapshot) {
-      snapshot.forEach(function (childSnapshot) {
-        var item = childSnapshot.val();
-        //item.key = childSnapshot.key;
-
-        calledReview.push(item);
-      });
-
-      return calledReview;
-    })
-  }
-
   handleComment(e) {
     e.preventDefault();
     this.setState({
       submitMode: true
     });
-  }
-
-  handleShoeReview(e) {
-    e.preventDefault();
-    this.setState({
-      reviews: [],
-      showMode: true
-    })
   }
 
   handleSubmit() {
@@ -91,8 +67,6 @@ class Reviewhandle extends React.Component {
   }
 
 
-
-
   render() {
 
     let commentElement, buttonArea, submittedReviews;
@@ -100,14 +74,8 @@ class Reviewhandle extends React.Component {
       commentElement = (
         <form onSubmit={this.writeData.bind(this)}>
           <textarea ref="commentContent" type="text" className='col-sm-6' name="inputText" placeholder={Generic_Review} />
-          <input className='btn btn-info' type="submit" name="submitButton" />
+          <input ref="reviewContent" className='btn btn-info' type="submit" name="submitButton" />
         </ form>)
-
-      submittedReviews = (
-        <form onClick={this.writeFireData.bind(this)}> <textarea type="text" className='col-sm-6' name="oldReview" />
-          <input className='btn btn-info' type="submit" name="reviewButtom" />
-        </form>
-      )
     }
 
     else {
@@ -118,12 +86,6 @@ class Reviewhandle extends React.Component {
             onClick={this.handleComment.bind(this)}>
             Write a review
           </button>
-
-          <button
-            className='btn btn-secondary'
-            onClick={this.handleShoeReview.bind(this)}>
-            Show Previous Reviews
-            </button>
         </div>
       );
     }
