@@ -1,9 +1,9 @@
 import React from 'react';
 import  ReviewHandle from './reviewHandler'
-import  '../stylesheets/shoes.css';
+import  '../stylesheets/wshoecards.css';
 
 
-class Shoes extends React.Component {
+class Wshoes extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -19,48 +19,44 @@ class Shoes extends React.Component {
                 <div className="row">
                     <div className="col-md-5">
                         <div className="card border-danger" >
-                            <div id="first" className="card-body ">
-                                 
+                            <div id="fifth" className='card-body bg-secondary'>
+
                             </div>
                             <div className="card-footer">
                                <ReviewHandle/>
                             </div>
                         </div>
-                    </div>
+                    </div><br/>
                     <div class="col-md-5">
                         <div className="card border-danger" >
-                            <div id="second" className="card-body bg-secondary">
-                                <h5 className="card-title">Card title</h5>
-                                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <div id="sixth" className="card-body bg-secondary">
+
                             </div>
                             <div className="card-footer">
                                  <ReviewHandle/>
                             </div>
                         </div>
-                    </div>
+                    </div><br/><br/>
                     <div className="col-md-5">
                         <div className="card border-danger"  >
-                            <div id="third" className="card-body bg-secondary">
-                                <h5 className="card-title">Card title</h5>
-                                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <button class="btn btn-primary">Click me</button>
+                            <div id="seventh" className="card-body bg-secondary">
+
                             </div>
                             <div className="card-footer">
                                <ReviewHandle/>
                             </div>
                         </div>
-                    </div>
+                    </div><br/>
                     <div className="col-md-5">
                         <div className="card border-danger" >
-                            <div id="first" className="card-body bg-secondary">
-                                <h5 className="card-title">Card title</h5>
-                                < button className="btn btn-primary">Click me</button> 
+                            <div id="eighth" className="card-body bg-secondary">
+
                             </div>
                             <div className="card-footer">
                                <ReviewHandle/>
                             </div>
                         </div>
-                    </div>
+                    </div><br/>
                 </div>
             </div>
         );
@@ -68,4 +64,4 @@ class Shoes extends React.Component {
 }
 
 
-export default Shoes;
+export default Wshoes;

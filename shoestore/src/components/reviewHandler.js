@@ -1,9 +1,5 @@
 import React from 'react';
-import '../stylesheets/review.css';
 import  firebase from "firebase";
-import Review from './review'
-import * as firebase from "firebase";
-import Review from './review';
 
 
 const config = {
@@ -18,28 +14,16 @@ const config = {
 
 firebase.initializeApp(config);
 
-/*
-
-const config = {
-  apiKey: "AIzaSyDdkwKYHkxhiBNEABcTOn4IzBBtnuMrLeU",
-  authDomain: "shoeshopproject.firebaseapp.com",
-  databaseURL: "https://shoeshopproject.firebaseio.com",
-  projectId: "shoeshopproject",
-  storageBucket: "shoeshopproject.appspot.com",
-  messagingSenderId: "299630602786"
-};
-firebase.initializeApp(config);
-
-*/
-
 const database = firebase.database();
 
 const Generic_Review = '';
 
+
+
 class Reviewhandle extends React.Component {
 
-  constructor() {
-    super();
+    constructor() {
+       super();
     this.state = {
       reviews: [],
       submitMode: false
@@ -49,7 +33,7 @@ class Reviewhandle extends React.Component {
   componentDidMount() {
     const commentRef = database.ref("review/");
 
-    commentRef.on("value", snapshot => {
+      commentRef.on("value", snapshot => {
       console.log(snapshot.val())
       this.setState({
         review: snapshot.val(),
@@ -92,7 +76,7 @@ class Reviewhandle extends React.Component {
       commentElement = (
         <form onSubmit={this.writeData.bind(this)}> 
         <textarea ref="commentContent" type="text" className='col-sm-6' name="inputText" placeholder={Generic_Review} />
-        <input className='btn btn-info' type="submit" name="submitButton" />
+        <input className='btn btn-secondary' type="submit" name="submitButton" />
         </ form>)
     }
 
@@ -113,7 +97,7 @@ class Reviewhandle extends React.Component {
       
      // <div className='col-sm-8'>
      //   <div className='card card-view'>
-          <div className='card-body'>
+          <div>
             {commentElement}
             {buttonArea}
           </div>

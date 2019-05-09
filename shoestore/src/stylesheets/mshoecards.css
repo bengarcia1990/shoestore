@@ -1,0 +1,37 @@
+body {
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+#first {
+    background-image:   url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIS_1hJD72qmjuADNCpRGgGmouL9P7Gn1XhJoNVuXB-dt3hggcag");
+    background-repeat:  no-repeat;
+    background-size:    cover;
+    height:             280px;
+    width:              400px;  
+}
+
+#second {
+    background-image:  url("https://www.pinclipart.com/picdir/middle/59-591678_adidas-shoes-icon-png-clipart.png");
+    background-repeat: no-repeat;
+    background-size:    cover;
+    height:             280px;
+    width:              400px; 
+}
+
+#third {
+    background-image:   url("https://www.seekclipart.com/clipng/middle/21-211508_dress-shoes-drawing-at-getdrawings-com-free-draw.png");
+    background-repeat:  no-repeat;
+    background-size:    cover;
+    height:             280px;
+    width:              400px; 
+}
+
+#fourth {
+    background-image:   url("https://static1.squarespace.com/static/5a61ec8ef14aa19db0da7818/t/5c138db270a6ad1559add6de/1544785341692/black-shoes-clipart.png?format=300w");
+    background-repeat:  no-repeat;
+    background-size:    cover;
+    height:             280px;
+    width:              400px; 
+}
+
