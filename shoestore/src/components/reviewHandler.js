@@ -15,20 +15,6 @@ const config = {
 
 firebase.initializeApp(config);
 
-/*
-
-const config = {
-  apiKey: "AIzaSyDdkwKYHkxhiBNEABcTOn4IzBBtnuMrLeU",
-  authDomain: "shoeshopproject.firebaseapp.com",
-  databaseURL: "https://shoeshopproject.firebaseio.com",
-  projectId: "shoeshopproject",
-  storageBucket: "shoeshopproject.appspot.com",
-  messagingSenderId: "299630602786"
-};
-firebase.initializeApp(config);
-
-*/
-
 const database = firebase.database();
 
 const Generic_Review = '';
@@ -69,11 +55,11 @@ class Reviewhandle extends React.Component {
 
   writeFireData = e => {
     e.preventDefault();
-    let calledReview = [];
+    const calledReview = database.ref("review/");
     calledReview.on("value", function (snapshot) {
       snapshot.forEach(function (childSnapshot) {
         var item = childSnapshot.val();
-        item.key = childSnapshot.key;
+        //item.key = childSnapshot.key;
 
         calledReview.push(item);
       });
@@ -150,9 +136,10 @@ class Reviewhandle extends React.Component {
       <div className='card-body'>
         {commentElement}
         {buttonArea}
-        {submittedReviews}
+        <div className='submittedReviews'>
+          {submittedReviews}
+        </div>
       </div>
-      //  </div>
 
       //  </div>
 
