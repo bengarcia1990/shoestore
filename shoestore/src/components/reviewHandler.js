@@ -1,10 +1,5 @@
 import React from 'react';
-<<<<<<< HEAD
 import  firebase from "firebase";
-=======
-import '../stylesheets/review.css';
-import firebase from "firebase";
->>>>>>> 4114e4e5ee25e2aa8a1b3b09ca32231ea335c167
 
 
 const config = {
@@ -124,7 +119,7 @@ class Reviewhandle extends React.Component {
             onClick={this.handleComment.bind(this)}>
             Write a review
           </button>
-
+     
           <button
             className='btn btn-secondary'
             onClick={this.handleShoeReview.bind(this)}>
@@ -136,7 +131,6 @@ class Reviewhandle extends React.Component {
 
 
     return (
-<<<<<<< HEAD
       
      // <div className='col-sm-8'>
      //   <div className='card card-view'>
@@ -145,22 +139,8 @@ class Reviewhandle extends React.Component {
             {buttonArea}
           </div>
       //  </div>
-=======
->>>>>>> 4114e4e5ee25e2aa8a1b3b09ca32231ea335c167
 
-      // <div className='col-sm-8'>
-      //   <div className='card card-view'>
-      <div className='card-body'>
-        {commentElement}
-        {buttonArea}
-        <div className='submittedReviews'>
-          {submittedReviews}
-        </div>
-      </div>
-
-      //  </div>
-
-    )
+     )
   }
 }
 

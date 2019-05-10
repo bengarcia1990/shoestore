@@ -9,7 +9,6 @@ class WomensShoes extends React.Component {
         return (
             <div className="pageContainer">
                 <Wshoes />
-                <Reviewhandle />
             </div>
 
 

@@ -1,11 +1,7 @@
-import React from 'react';
-<<<<<<< HEAD:shoestore/src/components/wshoecards.js
+import  React from 'react';
 import  ReviewHandle from './reviewHandler'
+import  Rating from './rating'
 import  '../stylesheets/wshoecards.css';
-=======
-import ReviewHandle from './reviewHandler'
-import '../stylesheets/shoes.css';
->>>>>>> 4114e4e5ee25e2aa8a1b3b09ca32231ea335c167:shoestore/src/components/shoes.js
 
 
 class Wshoes extends React.Component {
@@ -24,15 +20,12 @@ class Wshoes extends React.Component {
                 <div className="row">
                     <div className="col-md-5">
                         <div className="card border-danger" >
-<<<<<<< HEAD:shoestore/src/components/wshoecards.js
                             <div id="fifth" className='card-body bg-secondary'>
-=======
-                            <div id="first" className="card-body ">
->>>>>>> 4114e4e5ee25e2aa8a1b3b09ca32231ea335c167:shoestore/src/components/shoes.js
 
                             </div>
                             <div className="card-footer">
                                 <ReviewHandle />
+                                <Rating/>
                             </div>
                         </div>
                     </div><br/>
@@ -43,6 +36,7 @@ class Wshoes extends React.Component {
                             </div>
                             <div className="card-footer">
                                 <ReviewHandle />
+                                <Rating/>
                             </div>
                         </div>
                     </div><br/><br/>
@@ -53,22 +47,18 @@ class Wshoes extends React.Component {
                             </div>
                             <div className="card-footer">
                                 <ReviewHandle />
+                                <Rating/>
                             </div>
                         </div>
                     </div><br/>
                     <div className="col-md-5">
                         <div className="card border-danger" >
-<<<<<<< HEAD:shoestore/src/components/wshoecards.js
                             <div id="eighth" className="card-body bg-secondary">
 
-=======
-                            <div id="first" className="card-body bg-secondary">
-                                <h5 className="card-title">Card title</h5>
-                                < button className="btn btn-primary">Click me</button>
->>>>>>> 4114e4e5ee25e2aa8a1b3b09ca32231ea335c167:shoestore/src/components/shoes.js
                             </div>
                             <div className="card-footer">
                                 <ReviewHandle />
+                                <Rating/>
                             </div>
                         </div>
                     </div><br/>

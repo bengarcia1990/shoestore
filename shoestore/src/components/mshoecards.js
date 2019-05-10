@@ -1,5 +1,6 @@
-import React from 'react';
-import  ReviewHandle from './reviewHandler'
+import  React from 'react';
+import  ReviewHandle from './reviewHandler';
+import  Rating from './rating';
 import  '../stylesheets/mshoecards.css';
 
 
@@ -24,6 +25,7 @@ class Mshoes extends React.Component {
                             </div>
                             <div className="card-footer">
                                <ReviewHandle/>
+                               <Rating/>
                             </div>
                         </div>
                     </div><br/>
@@ -33,6 +35,7 @@ class Mshoes extends React.Component {
                             </div>
                             <div className="card-footer">
                                  <ReviewHandle/>
+                                 <Rating/>
                             </div>
                         </div>
                     </div><br/><br/>
@@ -43,6 +46,7 @@ class Mshoes extends React.Component {
                             </div>
                             <div className="card-footer">
                                <ReviewHandle/>
+                               <Rating/>
                             </div>
                         </div>
                     </div><br/>
@@ -53,6 +57,7 @@ class Mshoes extends React.Component {
                             </div>
                             <div className="card-footer">
                                <ReviewHandle/>
+                               <Rating/>
                             </div>
                         </div>
                     </div><br/>
