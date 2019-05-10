@@ -28,7 +28,7 @@ class Wshoes extends React.Component {
                                 <Rating/>
                             </div>
                         </div>
-                    </div><br/>
+                    </div><br />
                     <div class="col-md-5">
                         <div className="card border-danger" >
                             <div id="sixth" className="card-body bg-secondary">
@@ -39,7 +39,7 @@ class Wshoes extends React.Component {
                                 <Rating/>
                             </div>
                         </div>
-                    </div><br/><br/>
+                    </div><br /><br />
                     <div className="col-md-5">
                         <div className="card border-danger"  >
                             <div id="seventh" className="card-body bg-secondary">
@@ -50,7 +50,7 @@ class Wshoes extends React.Component {
                                 <Rating/>
                             </div>
                         </div>
-                    </div><br/>
+                    </div><br />
                     <div className="col-md-5">
                         <div className="card border-danger" >
                             <div id="eighth" className="card-body bg-secondary">
@@ -61,7 +61,7 @@ class Wshoes extends React.Component {
                                 <Rating/>
                             </div>
                         </div>
-                    </div><br/>
+                    </div><br />
                 </div>
             </div>
         );

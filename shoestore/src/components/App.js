@@ -6,7 +6,6 @@ import MensShoes from "./mensShoes";
 import WomensShoes from "./womensShoes";
 import Body from './body';
 
-const PORT = process.env.PORT || 5000
 class App extends React.Component {
 
 

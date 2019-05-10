@@ -1,5 +1,8 @@
 import React from 'react';
-import  firebase from "firebase";
+import Review from './review'
+//import '../stylesheets/review.css';
+import _ from 'lodash';
+import firebase from "firebase";
 
 
 const config = {
@@ -21,67 +24,45 @@ const Generic_Review = '';
 
 
 class Reviewhandle extends React.Component {
-
-    constructor() {
-       super();
+  constructor() {
+    super();
     this.state = {
-      reviews: [],
-      submitMode: false
+      submitMode: false,
+      reviews: []
     };
   }
 
   componentDidMount() {
-    const commentRef = database.ref("review/");
-
-      commentRef.on("value", snapshot => {
-      console.log(snapshot.val())
-      this.setState({
-        review: snapshot.val(),
-        submitMode: false,
-        showMode: false
-      })
-    })
-
-  }
-
-  writeData = e => {
-    e.preventDefault();
-    const reviewValue = e.target.inputText.value;
-
-    database.ref("review/").push(reviewValue, function (error) {
-      error ? alert("error") : console.log("it worked", reviewValue)
-    }
-    )
-  }
-
-  writeFireData = e => {
-    e.preventDefault();
-    const calledReview = database.ref("review/");
-    calledReview.on("value", function (snapshot) {
-      snapshot.forEach(function (childSnapshot) {
-        var item = childSnapshot.val();
-        //item.key = childSnapshot.key;
-
-        calledReview.push(item);
-      });
-
-      return calledReview;
-    })
-  }
-
-  handleComment(e) {
-    e.preventDefault();
-    this.setState({
-      submitMode: true
+    const reviewRef = database.ref("review/");
+    reviewRef.on("value", snapshot => {
+      this.getData(snapshot.val());
     });
   }
 
-  handleShoeReview(e) {
-    e.preventDefault();
+  getData(values) {
+    let reviewsVal = values;
+    let reviewList = _(reviewsVal)
+      .keys()
+      .map(
+        reviewKey => {
+          let cloned = _.clone(reviewsVal[reviewKey]);
+          cloned.key = reviewKey;
+          return cloned;
+        }
+      )
+      .value();
+
     this.setState({
-      reviews: [],
-      showMode: true
-    })
+      reviews: reviewList
+    });
+
+    console.log(this.state.reviews);
+  }
+
+  handleComment(e) {
+    this.setState({
+      submitMode: true
+    });
   }
 
   handleSubmit() {
@@ -92,22 +73,36 @@ class Reviewhandle extends React.Component {
   }
 
 
-
+  writeData = e => {
+    let fields = e.target.elements;
+    let review = {};
+    for (let x of [...fields]) {
+      if (x.name) review[x.name] = x.value;
+    }
+    database.ref("review/").push(review, function (error) {
+      if (error) {
+        alert("That didn't work, please try again.");
+      } else {
+        console.log("Successful submit!");
+      }
+    });
+  };
 
   render() {
 
-    let commentElement, buttonArea, submittedReviews;
-    if (this.state.submitMode || this.state.showMode) {
+    let commentElement, buttonArea;
+    if (this.state.submitMode) {
       commentElement = (
         <form onSubmit={this.writeData.bind(this)}>
-          <textarea ref="commentContent" type="text" className='col-sm-6' name="inputText" placeholder={Generic_Review} />
-          <input className='btn btn-info' type="submit" name="submitButton" />
-        </ form>)
+          <textarea ref="commentContent" type="text" className='col-sm-6' name="name" placeholder={Generic_Review} />
+          <input ref="reviewContent" className='btn btn-info' type="submit" name="mensreview" />
 
-      submittedReviews = (
-        <form onClick={this.writeFireData.bind(this)}> <textarea type="text" className='col-sm-6' name="oldReview" />
-          <input className='btn btn-info' type="submit" name="reviewButtom" />
-        </form>
+          <div className="row">
+            {this.state.reviews.map(review => (
+              <Review source={review} key={review.key} />
+            ))}
+          </div>
+        </ form>
       )
     }
 
@@ -119,12 +114,6 @@ class Reviewhandle extends React.Component {
             onClick={this.handleComment.bind(this)}>
             Write a review
           </button>
-     
-          <button
-            className='btn btn-secondary'
-            onClick={this.handleShoeReview.bind(this)}>
-            Show Previous Reviews
-            </button>
         </div>
       );
     }

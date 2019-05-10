@@ -19,7 +19,7 @@ class Mshoes extends React.Component {
             <div className="container">
                 <div className="row">
                     <div className="col-md-7 col-lg-5">
-                        <div className="card border-warning"> 
+                        <div className="card border-warning">
                             <div id="first" className='card-body bg-secondary'>
 
                             </div>
@@ -28,8 +28,8 @@ class Mshoes extends React.Component {
                                <Rating/>
                             </div>
                         </div>
-                    </div><br/>
-                    <div class="col-md-8 col-lg-6">
+                    </div><br />
+                    <div className="col-md-8 col-lg-6">
                         <div className="card border-warning" >
                             <div id="second" className="card-body bg-secondary">
                             </div>
@@ -38,7 +38,7 @@ class Mshoes extends React.Component {
                                  <Rating/>
                             </div>
                         </div>
-                    </div><br/><br/>
+                    </div><br /><br />
                     <div className="col-md-7 col-lg-5">
                         <div className="card border-warning"  >
                             <div id="third" className="card-body bg-secondary">
@@ -49,7 +49,7 @@ class Mshoes extends React.Component {
                                <Rating/>
                             </div>
                         </div>
-                    </div><br/>
+                    </div><br />
                     <div className="col-md-8 col-lg-6">
                         <div className="card border-warning" >
                             <div id="fourth" className="card-body bg-secondary">
@@ -60,7 +60,7 @@ class Mshoes extends React.Component {
                                <Rating/>
                             </div>
                         </div>
-                    </div><br/>
+                    </div><br />
                 </div>
             </div>
         );
