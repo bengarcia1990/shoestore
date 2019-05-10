@@ -1,10 +1,8 @@
 import React from 'react';
-<<<<<<< HEAD
-import  firebase from "firebase";
-=======
-import '../stylesheets/review.css';
+import Review from './review'
+//import '../stylesheets/review.css';
+import _ from 'lodash';
 import firebase from "firebase";
->>>>>>> 4114e4e5ee25e2aa8a1b3b09ca32231ea335c167
 
 
 const config = {
@@ -26,40 +24,42 @@ const Generic_Review = '';
 
 
 class Reviewhandle extends React.Component {
-
-    constructor() {
-       super();
+  constructor() {
+    super();
     this.state = {
-      reviews: [],
-      submitMode: false
+      submitMode: false,
+      reviews: []
     };
   }
 
   componentDidMount() {
-    const commentRef = database.ref("review/");
-
-      commentRef.on("value", snapshot => {
-      console.log(snapshot.val())
-      this.setState({
-        review: snapshot.val(),
-        submitMode: false,
-      })
-    })
-
+    const reviewRef = database.ref("review/");
+    reviewRef.on("value", snapshot => {
+      this.getData(snapshot.val());
+    });
   }
 
-  writeData = e => {
-    e.preventDefault();
-    const reviewValue = e.target.inputText.value;
+  getData(values) {
+    let reviewsVal = values;
+    let reviewList = _(reviewsVal)
+      .keys()
+      .map(
+        reviewKey => {
+          let cloned = _.clone(reviewsVal[reviewKey]);
+          cloned.key = reviewKey;
+          return cloned;
+        }
+      )
+      .value();
 
-    database.ref("review/").push(reviewValue, function (error) {
-      error ? alert("error") : console.log("it worked", reviewValue)
-    }
-    )
+    this.setState({
+      reviews: reviewList
+    });
+
+    console.log(this.state.reviews);
   }
 
   handleComment(e) {
-    e.preventDefault();
     this.setState({
       submitMode: true
     });
@@ -73,15 +73,37 @@ class Reviewhandle extends React.Component {
   }
 
 
+  writeData = e => {
+    let fields = e.target.elements;
+    let review = {};
+    for (let x of [...fields]) {
+      if (x.name) review[x.name] = x.value;
+    }
+    database.ref("review/").push(review, function (error) {
+      if (error) {
+        alert("That didn't work, please try again.");
+      } else {
+        console.log("Successful submit!");
+      }
+    });
+  };
+
   render() {
 
-    let commentElement, buttonArea, submittedReviews;
-    if (this.state.submitMode || this.state.showMode) {
+    let commentElement, buttonArea;
+    if (this.state.submitMode) {
       commentElement = (
         <form onSubmit={this.writeData.bind(this)}>
-          <textarea ref="commentContent" type="text" className='col-sm-6' name="inputText" placeholder={Generic_Review} />
-          <input ref="reviewContent" className='btn btn-info' type="submit" name="submitButton" />
-        </ form>)
+          <textarea ref="commentContent" type="text" className='col-sm-6' name="name" placeholder={Generic_Review} />
+          <input ref="reviewContent" className='btn btn-info' type="submit" name="mensreview" />
+
+          <div className="row">
+            {this.state.reviews.map(review => (
+              <Review source={review} key={review.key} />
+            ))}
+          </div>
+        </ form>
+      )
     }
 
     else {
@@ -98,26 +120,12 @@ class Reviewhandle extends React.Component {
 
 
     return (
-<<<<<<< HEAD
-      
-     // <div className='col-sm-8'>
-     //   <div className='card card-view'>
-          <div>
-            {commentElement}
-            {buttonArea}
-          </div>
-      //  </div>
-=======
->>>>>>> 4114e4e5ee25e2aa8a1b3b09ca32231ea335c167
 
       // <div className='col-sm-8'>
       //   <div className='card card-view'>
       <div className='card-body'>
         {commentElement}
         {buttonArea}
-        <div className='submittedReviews'>
-          {submittedReviews}
-        </div>
       </div>
 
       //  </div>

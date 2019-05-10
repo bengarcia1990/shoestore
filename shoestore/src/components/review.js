@@ -1,15 +1,16 @@
-writeFireData = e => {
-    e.preventDefault();
-    const calledReview = database.ref("review/");
+import React from 'react';
 
-    calledReview.on("value", function (snapshot) {
-        snapshot.forEach(function (childSnapshot) {
-            var item = childSnapshot.val();
-            //item.key = childSnapshot.key;
 
-            calledReview.push(item);
-        });
+const Review = ({ source }) => (
 
-        return calledReview;
-    })
-}
+    <div className="alert alert-dark">
+        <div className="card card-view">
+            <div className="card-body">
+                <p className="card-title">Feedback:{source.name}</p>
+
+            </div>
+        </div>
+    </div>
+)
+
+export default Review;
