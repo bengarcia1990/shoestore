@@ -20,7 +20,7 @@ class Wshoes extends React.Component {
                 <div className="row">
                     <div className="col-md-5">
                         <div className="card border-danger" >
-                            <div id="fifth" className='card-body bg-secondary'>
+                            <div id="fifth" className='card-body '>
 
                             </div>
                             <div className="card-footer">
@@ -31,7 +31,7 @@ class Wshoes extends React.Component {
                     </div><br />
                     <div class="col-md-5">
                         <div className="card border-danger" >
-                            <div id="sixth" className="card-body bg-secondary">
+                            <div id="sixth" className="card-body ">
 
                             </div>
                             <div className="card-footer">
@@ -53,7 +53,7 @@ class Wshoes extends React.Component {
                     </div><br />
                     <div className="col-md-5">
                         <div className="card border-danger" >
-                            <div id="eighth" className="card-body bg-secondary">
+                            <div id="eighth" className="card-body ">
 
                             </div>
                             <div className="card-footer">

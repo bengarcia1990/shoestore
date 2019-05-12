@@ -20,7 +20,7 @@ class Mshoes extends React.Component {
                 <div className="row">
                     <div className="col-md-7 col-lg-5">
                         <div className="card border-warning">
-                            <div id="first" className='card-body bg-secondary'>
+                            <div id="first" className='card-body '>
 
                             </div>
                             <div className="card-footer">
@@ -29,19 +29,20 @@ class Mshoes extends React.Component {
                             </div>
                         </div>
                     </div><br />
-                    <div className="col-md-8 col-lg-6">
+                    <div className="col-md-7 col-lg-5">
                         <div className="card border-warning" >
                             <div id="second" className="card-body bg-secondary">
+
                             </div>
                             <div className="card-footer">
-                                 <ReviewHandle/>
-                                 <Rating/>
+                                <ReviewHandle/>
+                                <Rating/>
                             </div>
                         </div>
                     </div><br /><br />
                     <div className="col-md-7 col-lg-5">
                         <div className="card border-warning"  >
-                            <div id="third" className="card-body bg-secondary">
+                            <div id="third" className="card-body ">
 
                             </div>
                             <div className="card-footer">
@@ -50,9 +51,9 @@ class Mshoes extends React.Component {
                             </div>
                         </div>
                     </div><br />
-                    <div className="col-md-8 col-lg-6">
+                    <div className="col-md-7 col-lg-5">
                         <div className="card border-warning" >
-                            <div id="fourth" className="card-body bg-secondary">
+                            <div id="fourth" className="card-body">
 
                             </div>
                             <div className="card-footer">

@@ -1,6 +1,5 @@
 import React from 'react';
 import Review from './review'
-//import '../stylesheets/review.css';
 import _ from 'lodash';
 import firebase from "firebase";
 
